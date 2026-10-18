@@ -2,6 +2,8 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Karhutla.js — Put the smoke on your website</title>
+<link rel="canonical" href="https://mvpro-id.github.io/karhutla/">
+<meta property="og:url" content="https://mvpro-id.github.io/karhutla/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23d32f2f'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M12 3s1 3-1.3 5.3C8.6 10.4 7 12 7 14.7a5 5 0 0 0 10 0c0-1.700-.8-3-1.700-4.200 0 1.300-.7 2.200-1.500 2.200C13.500 10 13 5.500 12 3zm0 15.500a2 2 0 0 1-2-2c0-1 .8-1.700 2-3 1.200 1.300 2 2 2 3a2 2 0 0 1-2 2z'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -417,7 +419,7 @@ function userKeep(){return $('kt').value.split(',').map(function(s){return s.tri
 function opts(){var m=$('mode').value,f=$('fq').value,o=live();o.reveal=$('reveal').value;o.disappear=m==='auto'?'auto':'scroll';o.scrollMode=m==='track'?'track':'lock';o.scrollDistance=+$('dist').value;o.delay=+$('dl').value;o.duration=+$('du').value;o.keepOnTop=INTERNAL.concat(userKeep());o.allowScroll=['#panel'];o.frequency=f==='limit'?{mode:'limit',times:+$('tm').value,days:+$('dy').value}:{mode:f};o.lang=LANG;return o}
 function lit(v){return v&&typeof v==='object'?'{ '+Object.keys(v).map(function(k){return k+': '+JSON.stringify(v[k])}).join(', ')+' }':JSON.stringify(v)}
 function initCode(){var o=opts();delete o.allowScroll;o.keepOnTop=userKeep();if(!o.keepOnTop.length)delete o.keepOnTop;if(!o.badge)delete o.badge;if(o.disappear==='scroll'){delete o.delay;delete o.duration}else{delete o.scrollMode;delete o.scrollDistance}return '<script>\n  Karhutla.init({\n'+Object.keys(o).map(function(k){return '    '+k+': '+lit(o[k])}).join(',\n')+'\n  });\n<\/script>'}
-function snippetA(){return '<script src="karhutla.js"><\/script>\n'+initCode()}
+function snippetA(){return '<script src="https://cdn.jsdelivr.net/gh/mvpro-id/karhutla@main/karhutla.min.js"><\/script>\n'+initCode()}
 function snippetB(){return '<script>\n'+$('plugin-src').textContent+'\n<\/script>\n'+initCode()}
 function previewB(){return '<script>\n/* Karhutla.js plugin, '+Math.round($('plugin-src').textContent.length/100)/10+' KB inlined (full source is copied) */\n<\/script>\n'+initCode()}
 function show(){codeEl.textContent=tab==='A'?snippetA():previewB();$('tabA').className=tab==='A'?'on':'';$('tabB').className=tab==='B'?'on':''}
