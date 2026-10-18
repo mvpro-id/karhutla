@@ -4,7 +4,7 @@
 
 Paste one script. Your page disappears into drifting smoke. Visitors scroll to clear it, and for a moment feel what millions breathe every dry season.
 
-[Live demo](#demo) · [Quick start](#quick-start) · [Options](#options) · [API](#api) · [Good practice](#good-practice)
+[Live demo](https://mvpro-id.github.io/karhutla/) · [Quick start](#quick-start) · [Options](#options) · [API](#api) · [Good practice](#good-practice)
 
 ---
 
@@ -26,10 +26,10 @@ Every dry season, fires in Indonesia's forests and peatlands send smoke across S
 
 ## Quick start
 
-Download [`karhutla.js`](./karhutla.js), host it next to your page, and add this before `</body>`:
+Add this before `</body>` (hosted on jsDelivr, no download needed):
 
 ```html
-<script src="karhutla.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mvpro-id/karhutla@main/karhutla.min.js"></script>
 <script>
   Karhutla.init({
     thickness: 0.8,
@@ -42,7 +42,13 @@ Download [`karhutla.js`](./karhutla.js), host it next to your page, and add this
 </script>
 ```
 
-Prefer a single paste? Inline the contents of `karhutla.js` inside a `<script>` tag, followed by the `Karhutla.init(...)` call.
+For production, pin a release instead of `@main` so updates never change your site unexpectedly:
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/mvpro-id/karhutla@1.0.0/karhutla.min.js"></script>
+```
+
+Prefer to self-host? Download [`karhutla.js`](./karhutla.js), place it next to your page and use `<script src="karhutla.js"></script>`. Prefer a single paste? Inline the contents of `karhutla.js` inside a `<script>` tag, followed by the `Karhutla.init(...)` call.
 
 It also works as a module:
 
@@ -113,7 +119,7 @@ Karhutla.defaults;       // the default options
 
 ## Demo
 
-This repository includes a demo and campaign page (`index.html`) with:
+Try it live at **[https://mvpro-id.github.io/karhutla/](https://mvpro-id.github.io/karhutla/)**. The page (`index.html` in this repository) includes:
 
 - A GoFundMe-style layout in a forest-fire theme, with a full-screen hero whose title stays above the smoke.
 - A **settings panel** that tunes every option live and generates the embed code (snippet or all-in-one).
